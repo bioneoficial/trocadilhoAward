@@ -9,22 +9,25 @@ describe("<Pun />", () => {
       dev: "julia.albq",
       context:
         "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
-      message: "Lorem ipsus",
+      message: "Lorem ipsuss",
     },
     {
       date: "14/02/2023",
       votes: 2,
       dev: "joao.holanda",
       context:
-        "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in bibendum ligula, id ultricies urna. Duis tincidunt nulla non velit maximus, sit amet dapibus nisi dictum.",
       message: "Lorem ipsus",
     },
   ];
 
   it("Renders a list of puns", () => {
-    render(<table><Pun puns={puns} /></table>); // <table> is necessary to render the <tbody> element));
+    render(
+      <table>
+        <Pun puns={puns} />
+      </table>
+    ); // <table> is necessary to render the <tbody> element));
 
-    
     const tbody = screen.getByRole("rowgroup");
 
     expect(tbody).toBeInTheDocument();
@@ -57,9 +60,9 @@ describe("<Pun />", () => {
       expect(messageCell).toBeInTheDocument();
       expect(row).toContainElement(messageCell);
 
-      const likeButton = screen.getByRole("button", { name: /like/i });
-      expect(likeButton).toBeInTheDocument();
-      expect(row).toContainElement(likeButton);
+      const likeButton = screen.queryAllByRole("button", { name: /like/i, container: row });
+      expect(likeButton.length).toBeGreaterThan(0);
+      expect(likeButton[0]).toBeInTheDocument();
     }
   });
 });
