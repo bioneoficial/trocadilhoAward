@@ -1,9 +1,11 @@
 import React from "react";
 import Trocadilho from "../../atoms/Trocadilho";
 import "./TrocadilhoList.css";
+import { TROCADILHOS } from "../../utils/enums";
 
 const TrocadilhoList = () => {
-
+  localStorage.setItem('trocadilhos', JSON.stringify(TROCADILHOS));
+  const trocadilhosFromStorage = JSON.parse(localStorage.getItem('trocadilhos'));
   return (
     <div className="container">
       <table className="container__table">
@@ -18,7 +20,7 @@ const TrocadilhoList = () => {
         </tr>
         </thead>
         <tbody>
-       <Trocadilho />
+       <Trocadilho trocadilhos={trocadilhosFromStorage}/>
        </tbody>
       </table>
     </div>

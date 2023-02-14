@@ -1,13 +1,11 @@
 import React from "react";
 import "./Trocadilho.css";
-import { TROCADILHOS } from "../../utils/enums";
 import LikeButton from "../LikeButton";
 
-const Trocadilho = () => {
-  localStorage.setItem('trocadilhos', JSON.stringify(TROCADILHOS));
-  const trocadilhosFromStorage = JSON.parse(localStorage.getItem('trocadilhos'));
+const Trocadilho = ({trocadilhos}) => {
+
   return (
-    <>{ trocadilhosFromStorage && trocadilhosFromStorage.length > 0 ? trocadilhosFromStorage.map((trocadilho, index) => (
+    <>{ trocadilhos && trocadilhos.length > 0 ? trocadilhos.map((trocadilho, index) => (
       <tr key={index} className="table_row_trocadilho">
         <td className="table_row__data">{trocadilho.date}</td>
         <td className="table_row__data">{trocadilho.votes}</td>
