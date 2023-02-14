@@ -1,10 +1,8 @@
-import React from 'react';
-import './Ranking.css';
+import React from "react";
+import "./Ranking.css";
 
 const Ranking = () => {
-  return (
-    <h2>Ranking</h2>
-  );
+  return <span>Ranking</span>;
 };
 
 export default Ranking;

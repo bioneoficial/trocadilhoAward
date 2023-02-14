@@ -1,0 +1,10 @@
+.likeButton{
+    color: white;
+    background-color: green;
+    border-radius: 5px;
+    padding: 0.6rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    border: none;
+    width: max-content;
+}
