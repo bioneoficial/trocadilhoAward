@@ -1,9 +1,8 @@
-
 import { render, screen } from "@testing-library/react";
-import TrocadilhoList from "./TrocadilhoList";
+import PunList from "./PunList";
 
-describe("<TrocadilhoList/>", () => {
-  const trocadilhosAvailable = [
+describe("<PunList/>", () => {
+  const punsAvailable = [
     {
       date: "13/02/2023",
       votes: 1,
@@ -37,12 +36,50 @@ describe("<TrocadilhoList/>", () => {
       message: "Lorem ipsus",
     },
   ];
+
+  const punsEmpty = [];
   
-  it("A list of available trocadilhos should be displayed on the page", () => {
-    render(<TrocadilhoList trocadilhos={trocadilhosAvailable} />);
+  beforeEach(() => {
+    // Mock localStorage for each test
+    const localStorageMock = (() => {
+      let store = {};
+      return {
+        getItem: (key) => store[key],
+        setItem: (key, value) => (store[key] = value),
+        clear: () => (store = {}),
+      };
+    })();
+    Object.defineProperty(window, "localStorage", {
+      value: localStorageMock,
+      writable: true,
+    });
 
-    const trocadilhosTable = screen.getByRole("table");
+    localStorage.setItem("puns", JSON.stringify(punsAvailable));
+  });
 
-    expect(trocadilhosTable).toBeInTheDocument();
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it("A list of available puns should be displayed on the page", () => {
+    render(<PunList />);
+
+    const punsTable = screen.getByRole("table");
+
+    expect(punsTable).toBeInTheDocument();
+
+    const tableRows = screen.getAllByRole("row");
+    expect(tableRows.length).toEqual(punsAvailable.length + 1); // add 1 for the table header row
+  });
+
+
+  it("A message should be displayed saying that the list is empty", () => {
+    localStorage.clear();
+
+    render(<PunList />);
+  
+    const emptyMessages = screen.getByText("Lista Vazia");
+  
+    expect(emptyMessages).toBeInTheDocument();
   });
 });

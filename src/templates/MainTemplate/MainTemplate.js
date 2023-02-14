@@ -7,12 +7,12 @@ const MainTemplate = ({ children }) => {
   const selectedTabName = window.localStorage.getItem("selectedTabName");
   return (
     <div className="container">
-      <h1>Trocadilho Awards</h1>
+      <h1 className="container__title">Trocadilho Awards</h1>
       <header className="container__header">
         <Tabs currentTab={{ id: selectedTabId, selected: true }} />
       </header>
       <main className="container__main">
-        <h2>{selectedTabName}</h2>
+        <h2 className="container__main__title">{selectedTabName}</h2>
         {children}
       </main>
     </div>

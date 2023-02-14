@@ -18,7 +18,7 @@ const TABS = [
     selected: false,
   },
 ];
-const TROCADILHOS = [
+const PUNS = [
   {
     date: "13/02/2023",
     votes: 1,
@@ -53,4 +53,4 @@ const TROCADILHOS = [
   },
 ];
 
-export { TABS, TROCADILHOS };
+export { TABS, PUNS };

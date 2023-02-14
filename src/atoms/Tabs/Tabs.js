@@ -10,19 +10,14 @@ const Tabs = ({ currentTab }) => {
   };
 
   return (
-    <div className="container">
-      <div className="container__wrapper">
+    <div className="tabs">
+      <div className="tabs__wrapper">
         {tabs.map((tab) => {
           const selected = tab.id === currentTab.id;
-          const style = {
-            color: selected ? "lightskyblue" : "gray",
-            borderBottom: selected ? "2px solid" : "none",
-            paddingBottom: selected ? "10px" : "none",
-          };
           return (
-            <div className="container__tabBox" key={tab.name} style={style}>
+            <div className={`tabs__tabBox ${selected ? 'tabs__tabBox--selected' : ''}`} key={tab.name}>
               <span
-                className="container__tabBox__tab"
+                className="tabs__tabBox__tab"
                 key={tab.name}
                 onClick={() => [
                   onClick(tab),
