@@ -1,13 +1,13 @@
 import React from "react";
-import Ranking from "../../organisms/Ranking";
+import PunList from "../../organisms/PunList";
 import MainTemplate from "../../templates/MainTemplate";
 
-const RankingPage = () => {
+const PunListPage = () => {
   return (
     <MainTemplate>
-      <Ranking />
+      <PunList />
     </MainTemplate>
   );
 };
 
-export default RankingPage;
+export default PunListPage;

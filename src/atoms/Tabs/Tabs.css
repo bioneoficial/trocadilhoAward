@@ -1,0 +1,20 @@
+.tabs {
+  padding: 32px 0;
+}
+
+.tabs__list {
+  width: 100%;
+  display: flex;
+}
+
+.tabs__list-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabs__list-item--selected {
+  color: lightskyblue;
+  border-bottom: 2px solid;
+  padding-bottom: 10px;
+}
