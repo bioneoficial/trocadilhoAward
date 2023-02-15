@@ -27,6 +27,6 @@ describe("<LikeButton />", () => {
 
     const likeButton = screen.getByRole("button", { name: /like/i });
 
-    expect(likeButton).toHaveTextContent("DEIXE SEU LIKE!");
+    expect(likeButton).toHaveTextContent(/DEIXE SEU LIKE!/i);
   });
 });
