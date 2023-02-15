@@ -1,4 +1,4 @@
-h2 {
+.pum-list__empy-message {
   font-size: 3.5rem;
   font-weight: 600;
   margin: 0;
@@ -32,4 +32,9 @@ h2 {
 
 .pun-list__table tr:not(.pun-list__table__row--head):hover {
   background-color: #ddd;
+}
+
+
+.pum-list__empy-message, .pun-list__table__row__head__title{
+  text-transform: capitalize;
 }

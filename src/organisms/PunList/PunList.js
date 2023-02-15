@@ -12,19 +12,19 @@ const PunList = () => {
           <table className="pun-list__table">
             <thead>
               <tr className="pun-list__table__row--head">
-                <th className="pun-list__table__row__head__title">Data</th>
-                <th className="pun-list__table__row__head__title">Votos</th>
-                <th className="pun-list__table__row__head__title">Dev</th>
-                <th className="pun-list__table__row__head__title">Contexto</th>
-                <th className="pun-list__table__row__head__title">Trocadilho</th>
-                <th className="pun-list__table__row__head__title">Votar</th>
+                <th className="pun-list__table__row__head__title">data</th>
+                <th className="pun-list__table__row__head__title">votos</th>
+                <th className="pun-list__table__row__head__title">dev</th>
+                <th className="pun-list__table__row__head__title">contexto</th>
+                <th className="pun-list__table__row__head__title">trocadilho</th>
+                <th className="pun-list__table__row__head__title">votar</th>
               </tr>
             </thead>
               <Pun puns={PUNS} />
           </table>
         </div>
       ) : (
-        <h2>Lista Vazia</h2>
+        <h2 className="pum-list__empy-message">lista vazia</h2>
       )}
     </>
   );
