@@ -4,11 +4,10 @@ import "./PunList.css";
 import { PUNS } from "../../utils/enums";
 
 const PunList = () => {
-  localStorage.setItem("puns", JSON.stringify(PUNS));
-  const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
+
   return (
     <>
-      {punsFromStorage && punsFromStorage.length > 0 ? (
+      {PUNS && PUNS.length > 0 ? (
         <div className="container">
           <table className="container__table">
             <thead>
@@ -21,7 +20,7 @@ const PunList = () => {
                 <th className="table_row__head_title">Votar</th>
               </tr>
             </thead>
-              <Pun puns={punsFromStorage} />
+              <Pun puns={PUNS} />
           </table>
         </div>
       ) : (

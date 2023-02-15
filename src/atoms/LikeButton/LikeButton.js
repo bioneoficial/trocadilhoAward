@@ -1,8 +1,8 @@
 import React from "react";
 import "./LikeButton.css";
 
-const LikeButton = () => {
-  return <button className="likeButton">DEIXE SEU LIKE!</button>;
+const LikeButton = ({ onClick}) => {
+  return <button className="likeButton" onClick={onClick}>DEIXE SEU LIKE!</button>;
 };
 
 export default LikeButton;

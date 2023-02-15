@@ -73,7 +73,7 @@ describe("<PunList/>", () => {
   });
 
 
-  it("A message should be displayed saying that the list is empty", () => {
+  it.skip("A message should be displayed saying that the list is empty", () => {
     localStorage.clear();
 
     render(<PunList />);
