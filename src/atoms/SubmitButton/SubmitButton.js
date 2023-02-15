@@ -1,7 +1,7 @@
 import React from "react";
 import "./SubmitButton.css";
 
-const SubmitButton = () => {
+const SubmitButton = ({ onClick }) => {
   return <button className="submitButton">Adicionar</button>;
 };
 

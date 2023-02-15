@@ -57,4 +57,7 @@ const PUNS = [
   },
 ];
 
-export { TABS, PUNS };
+const ERRORMESSAGE = "Este campo é obrigatório";
+
+
+export { TABS, PUNS, ERRORMESSAGE };

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LikeButton from "../LikeButton";
 import "./Pun.css";
+
 const Pun = ({ puns }) => {
   const [punList, setPunList] = useState(puns);
 
@@ -9,6 +10,10 @@ const Pun = ({ puns }) => {
     updatedPunList[index].votes++;
     setPunList(updatedPunList);
   };
+
+  useEffect(() => {
+    localStorage.setItem("puns", JSON.stringify(punList));
+  }, [punList]);
 
   return (
     <tbody className="pun__table-body">

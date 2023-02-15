@@ -1,0 +1,9 @@
+.TextInput__errorMessage {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #fa5a5a;
+  margin-top: 8px;
+}
