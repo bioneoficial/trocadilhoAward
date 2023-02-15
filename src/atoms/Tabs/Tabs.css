@@ -2,17 +2,18 @@
   padding: 32px 0;
 }
 
-.tabs__wrapper {
+.tabs__list {
   width: 100%;
   display: flex;
 }
-.tabs__tabBox {
+
+.tabs__list-item {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.tabs__tabBox--selected{
+.tabs__list-item--selected {
   color: lightskyblue;
   border-bottom: 2px solid;
   padding-bottom: 10px;

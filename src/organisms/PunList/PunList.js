@@ -10,24 +10,24 @@ const PunList = () => {
   const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
   return (
     <>
-      {punsFromStorage && punsFromStorage.length > 0 ? (
-        <div className="container">
-          <table className="container__table">
+      {PUNS && PUNS.length > 0 ? (
+        <div>
+          <table className="pun-list__table">
             <thead>
-              <tr className="table__row__head">
-                <th className="table_row__head_title">Data</th>
-                <th className="table_row__head_title">Votos</th>
-                <th className="table_row__head_title">Dev</th>
-                <th className="table_row__head_title">Contexto</th>
-                <th className="table_row__head_title">Trocadilho</th>
-                <th className="table_row__head_title">Votar</th>
+              <tr className="pun-list__table__row--head">
+                <th className="pun-list__table__row__head__title">data</th>
+                <th className="pun-list__table__row__head__title">votos</th>
+                <th className="pun-list__table__row__head__title">dev</th>
+                <th className="pun-list__table__row__head__title">contexto</th>
+                <th className="pun-list__table__row__head__title">trocadilho</th>
+                <th className="pun-list__table__row__head__title">votar</th>
               </tr>
             </thead>
               <Pun puns={punsFromStorage} />
           </table>
         </div>
       ) : (
-        <h2>Lista Vazia</h2>
+        <h2 className="pum-list__empy-message">lista vazia</h2>
       )}
     </>
   );

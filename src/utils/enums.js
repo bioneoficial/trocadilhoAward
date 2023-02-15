@@ -2,7 +2,7 @@ const TABS = [
   {
     id: "LISTA DE TROCADILHOS",
     name: "Lista de Trocadilhos",
-    redirectTo: "/lista-trocadilho",
+    redirectTo: "/",
     selected: false,
   },
   {
@@ -20,6 +20,7 @@ const TABS = [
 ];
 const PUNS = [
   {
+    id: "0",
     date: "13/02/2023",
     votes: 1,
     dev: "julia.albq",
@@ -28,6 +29,7 @@ const PUNS = [
     message: "Lorem ipsus",
   },
   {
+    id: "1",
     date: "14/02/2023",
     votes: 2,
     dev: "joao.holanda",
@@ -36,6 +38,7 @@ const PUNS = [
     message: "Lorem ipsus",
   },
   {
+    id: "2",
     date: "12/02/2023",
     votes: 3,
     dev: "lucas.oliveira",
@@ -44,6 +47,7 @@ const PUNS = [
     message: "Lorem ipsus",
   },
   {
+    id: "3",
     date: "11/02/2023",
     votes: 4,
     dev: "daniel.brasil",

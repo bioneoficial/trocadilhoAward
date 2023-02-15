@@ -26,7 +26,7 @@ describe("<Pun />", () => {
       <table>
         <Pun puns={puns} />
       </table>
-    ); // <table> is necessary to render the <tbody> element));
+    );
 
     const tbody = screen.getByRole("rowgroup");
 
