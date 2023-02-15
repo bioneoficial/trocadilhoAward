@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import LikeButton from "../LikeButton";
+import "./Pun.css";
 
 const Pun = ({ puns }) => {
   const [punList, setPunList] = useState(puns);
@@ -11,16 +12,22 @@ const Pun = ({ puns }) => {
   };
 
   return (
-    <tbody>
-      {punList.map((pun, index) => (
-        <tr key={index} className="table_row_pun">
-          <td className="table_row__data">{pun.date}</td>
-          <td className="table_row__data">{pun.votes}</td>
-          <td className="table_row__data">{pun.dev}</td>
-          <td className="table_row__data">{pun.context}</td>
-          <td className="table_row__data">{pun.message}</td>
-          <td className="table_row__data">
-            <LikeButton onClick={() => upVote(index)} />
+    <tbody className="pun__table-body">
+      {punList.map((pun) => (
+        <tr key={pun.id} className="pun__table-row">
+          <td className="pun__table-cell pun__table-cell--date">{pun.date}</td>
+          <td className="pun__table-cell pun__table-cell--votes">
+            {pun.votes}
+          </td>
+          <td className="pun__table-cell pun__table-cell--dev">{pun.dev}</td>
+          <td className="pun__table-cell pun__table-cell--context">
+            {pun.context}
+          </td>
+          <td className="pun__table-cell pun__table-cell--message">
+            {pun.message}
+          </td>
+          <td className="pun__table-cell pun__table-cell--button">
+            <LikeButton onClick={() => upVote(pun.id)} />
           </td>
         </tr>
       ))}

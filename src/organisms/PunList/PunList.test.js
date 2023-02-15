@@ -37,10 +37,8 @@ describe("<PunList/>", () => {
     },
   ];
 
-  const punsEmpty = [];
   
   beforeEach(() => {
-    // Mock localStorage for each test
     const localStorageMock = (() => {
       let store = {};
       return {
@@ -63,13 +61,13 @@ describe("<PunList/>", () => {
 
   it("A list of available puns should be displayed on the page", () => {
     render(<PunList />);
-
+    const tableHeaderRow = 1;
     const punsTable = screen.getByRole("table");
 
     expect(punsTable).toBeInTheDocument();
 
     const tableRows = screen.getAllByRole("row");
-    expect(tableRows.length).toEqual(punsAvailable.length + 1); // add 1 for the table header row
+    expect(tableRows.length).toEqual(punsAvailable.length + tableHeaderRow);
   });
 
 

@@ -1,27 +1,28 @@
-.container {
+.main-template {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
-.container__title {
+
+.main-template__title {
   font-size: 5em;
   align-self: center;
   margin: 0;
 }
 
-.container__header {
+.main-template__header {
   align-self: center;
   width: 100%;
 }
 
-.container__main{
+.main-template__content {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.container__main__title{
+.main-template__content__title {
   font-size: 4em;
   align-self: center;
   margin-top: 0;

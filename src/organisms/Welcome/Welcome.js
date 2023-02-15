@@ -8,18 +8,19 @@ const Welcome = () => {
   const onClick = () => navigate("/lista-trocadilho");
 
   return (
-    <div className="container">
-      <h1>VAMOS COMECAR AMIGOS AVALIADORES?</h1>
-      <p>
-        {" "}
+    <div className="welcome">
+      <h1 className="welcome__title">VAMOS COMECAR AMIGOS AVALIADORES?</h1>
+      <p className="welcome__text">
         IREI FAZER OS ORGANISMOS JUNTOS SEM CSS E COM O PROGRESSO IREI
         COMPONENTIZANDO E ESTILIZANDO.
       </p>
-      <p>
+      <p className="welcome__text">
         DEIXEI A ESTRUTURA PRONTA MAS VAI SER TUDO BEM CRU ATE TER O CHECK PRA
         IR REFINANDO.
       </p>
-      <button onClick={onClick}>INICIAR</button>
+      <button className="welcome__button" onClick={onClick}>
+        INICIAR
+      </button>
     </div>
   );
 };

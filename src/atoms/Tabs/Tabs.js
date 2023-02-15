@@ -6,32 +6,35 @@ import { useNavigate } from "react-router-dom";
 const Tabs = ({ currentTab }) => {
   const navigate = useNavigate();
   const onClick = (tab) => {
+    window.sessionStorage.setItem("selectedTabId", tab.id);
+    window.sessionStorage.setItem("selectedTabName", tab.name);
     navigate(tab.redirectTo);
   };
 
   return (
-    <div className="tabs">
-      <div className="tabs__wrapper">
+    <nav className="tabs">
+      <ul className="tabs__list">
         {tabs.map((tab) => {
           const selected = tab.id === currentTab.id;
           return (
-            <div className={`tabs__tabBox ${selected ? 'tabs__tabBox--selected' : ''}`} key={tab.name}>
+            <li
+              className={`tabs__list-item ${
+                selected ? "tabs__list-item--selected" : ""
+              }`}
+              key={tab.name}
+            >
               <span
-                className="tabs__tabBox__tab"
+                className="tabs__tab"
                 key={tab.name}
-                onClick={() => [
-                  onClick(tab),
-                  window.localStorage.setItem("selectedTabId", tab.id),
-                  window.localStorage.setItem("selectedTabName", tab.name)
-                ]}
+                onClick={() => onClick(tab)}
               >
                 {tab.name}
               </span>
-            </div>
+            </li>
           );
         })}
-      </div>
-    </div>
+      </ul>
+    </nav>
   );
 };
 

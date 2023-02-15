@@ -8,16 +8,16 @@ const PunList = () => {
   return (
     <>
       {PUNS && PUNS.length > 0 ? (
-        <div className="container">
-          <table className="container__table">
+        <div>
+          <table className="pun-list__table">
             <thead>
-              <tr className="table__row__head">
-                <th className="table_row__head_title">Data</th>
-                <th className="table_row__head_title">Votos</th>
-                <th className="table_row__head_title">Dev</th>
-                <th className="table_row__head_title">Contexto</th>
-                <th className="table_row__head_title">Trocadilho</th>
-                <th className="table_row__head_title">Votar</th>
+              <tr className="pun-list__table__row--head">
+                <th className="pun-list__table__row__head__title">Data</th>
+                <th className="pun-list__table__row__head__title">Votos</th>
+                <th className="pun-list__table__row__head__title">Dev</th>
+                <th className="pun-list__table__row__head__title">Contexto</th>
+                <th className="pun-list__table__row__head__title">Trocadilho</th>
+                <th className="pun-list__table__row__head__title">Votar</th>
               </tr>
             </thead>
               <Pun puns={PUNS} />
