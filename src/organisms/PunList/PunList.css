@@ -30,6 +30,6 @@ h2 {
   background-color: #f2f2f2;
 }
 
-.pun-list__table tr:hover {
+.pun-list__table tr:not(.pun-list__table__row--head):hover {
   background-color: #ddd;
 }
