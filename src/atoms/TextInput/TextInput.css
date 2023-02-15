@@ -1,4 +1,4 @@
-.TextInput__label {
+.text-input__label {
   width: 100%;
   height: 24px;
   font-family: "Nunito";
@@ -10,7 +10,7 @@
   margin-bottom: 8px;
 }
 
-.TextInput__input {
+.text-input__input {
   display: flex;
   flex-direction: row;
   padding: 17px 24px;
@@ -32,17 +32,17 @@
   line-height: 22px;
 }
 
-.TextInput__input::placeholder::-webkit-input-placeholder {
+.text-input__input::placeholder::-webkit-input-placeholder {
   color: #333333;
   opacity: 0.3;
 }
 
-.TextInput__input ::-ms-input-placeholder {
+.text-input__input ::-ms-input-placeholder {
   color: #333333;
   opacity: 0.3;
 }
 
-.TextInput__input::-moz-placeholder {
+.text-input__input::-moz-placeholder {
   color: #333333;
   opacity: 0.3;
 }

@@ -47,4 +47,16 @@ describe("TextInput", () => {
     const input = screen.getByRole("textbox");
     expect(input).toBeDisabled();
   });
+
+  it("renders the title when the title prop is passed", () => {
+    render(<TextInput {...props} />);
+    const title = screen.getByText("Title");
+    expect(title).toBeInTheDocument();
+  });
+
+  it("renders TextInput with correct class", () => {
+    render(<TextInput />);
+    const input = screen.getByRole("textbox");
+    expect(input).toHaveClass("text-input__input");
+  });
 });

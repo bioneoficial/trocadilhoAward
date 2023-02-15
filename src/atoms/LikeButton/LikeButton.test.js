@@ -34,5 +34,5 @@ describe("<LikeButton />", () => {
 it("renders a button with the correct class", () => {
   render(<LikeButton />);
   const likeButton = screen.getByRole("button", { name: /like/i });
-  expect(likeButton).toHaveClass("likeButton");
+  expect(likeButton).toHaveClass("like-button");
 });

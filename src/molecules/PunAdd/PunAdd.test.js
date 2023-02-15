@@ -28,4 +28,17 @@ describe("PunAdd", () => {
     expect(contextInput).toHaveValue("");
     expect(punInput).toHaveValue("");
   });
+
+  it("does not submit the form when required fields are empty", () => {
+    render(<PunAdd />);
+    const submitButton = screen.getByRole("button");
+    fireEvent.click(submitButton);
+
+    expect(screen.getAllByText(/Este campo é obrigatório/i)).toHaveLength(3);
+  });
+
+  it("Render with correct class", () => {
+    render(<PunAdd />);
+    expect(screen.getByRole("form")).toHaveClass("pun-add__form");
+  });
 });

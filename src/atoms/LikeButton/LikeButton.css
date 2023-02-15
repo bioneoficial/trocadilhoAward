@@ -1,4 +1,4 @@
-.likeButton {
+.like-button {
   color: white;
   background-color: green;
   border-radius: 5px;
@@ -10,6 +10,6 @@
   text-transform: uppercase;
 }
 
-.likeButton:hover {
+.like-button:hover {
   background-color: #00b300;
 }

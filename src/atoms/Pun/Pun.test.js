@@ -69,4 +69,22 @@ describe("<Pun />", () => {
       expect(likeButton[0]).toBeInTheDocument();
     }
   });
+
+  it("Render Pun with correct class", () => {
+    render(
+      <table>
+        <Pun puns={puns} />
+      </table>
+    );
+
+    const punRows = screen.queryAllByRole("row");
+
+    expect(punRows).toHaveLength(puns.length);
+
+    for (let i = 0; i < puns.length; i++) {
+      const row = punRows[i];
+
+      expect(row).toHaveClass("pun__table-row");
+    }
+  });
 });

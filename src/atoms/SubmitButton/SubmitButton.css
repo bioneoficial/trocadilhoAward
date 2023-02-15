@@ -1,4 +1,4 @@
-.submitButton{
+.submit-button{
     background-color: black;
     border: none;
     color: white;
@@ -12,16 +12,16 @@
     border-radius: 5px;
 }
 
-.submitButton:hover{
+.submit-button:hover{
     background-color: #555555;
 }
 
-.submitButton:active{
+.submit-button:active{
     box-shadow: 0 5px #666;
     transform: translateY(4px);
 }
 
-.submitButton:focus{
+.submit-button:focus{
     outline: none;
     background-color: #555555;
 }

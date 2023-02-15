@@ -20,5 +20,5 @@ it("calls the onClick function when the button is clicked", () => {
 it("renders a button with the correct class", () => {
   render(<SubmitButton />);
   const submitButton = screen.getByRole("button", { name: /adicionar/i });
-  expect(submitButton).toHaveClass("submitButton");
+  expect(submitButton).toHaveClass("submit-button");
 });

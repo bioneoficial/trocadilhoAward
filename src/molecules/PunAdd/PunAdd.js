@@ -59,19 +59,19 @@ const PunAdd = () => {
   }, []);
 
   return (
-    <form className="PunAdd__form">
-      <div className="PunAdd__inputWrapper">
+    <form className="pun-add__form" role={"form"}>
+      <div className="pun-add__inputWrapper">
         <TextInput
           id={"data"}
           title="Data"
           value={date}
           required={required.date}
-          className="PunAdd__input"
+          className="pun-add__input"
           disabled={true}
           maxLength={10}
         />
       </div>
-      <div className="PunAdd__inputWrapper">
+      <div className="pun-add__inputWrapper">
         <TextInput
           id={"dev"}
           title="Dev"
@@ -80,13 +80,13 @@ const PunAdd = () => {
           onChange={(e) => setDev(e.target.value)}
           required={required.dev}
           maxLength={80}
-          className="PunAdd__input"
+          className="pun-add__input"
         />
       </div>
       {required.dev && (
-        <div className="TextInput__errorMessage">{errorMessage}</div>
+        <div className="text-input__errorMessage">{errorMessage}</div>
       )}
-      <div className="PunAdd__inputWrapper">
+      <div className="pun-add__inputWrapper">
         <TextInput
           id={"context"}
           title="Contexto"
@@ -95,13 +95,13 @@ const PunAdd = () => {
           onChange={(e) => setContext(e.target.value)}
           required={required.context}
           maxLength={80}
-          className="PunAdd__input"
+          className="pun-add__input"
         />
       </div>
       {required.context && (
-        <div className="TextInput__errorMessage">{errorMessage}</div>
+        <div className="text-input__errorMessage">{errorMessage}</div>
       )}
-      <div className="PunAdd__inputWrapper">
+      <div className="pun-add__inputWrapper">
         <TextInput
           id={"pun"}
           title="Trocadilho"
@@ -110,11 +110,11 @@ const PunAdd = () => {
           onChange={(e) => setPun(e.target.value)}
           required={required.pun}
           maxLength={80}
-          className="PunAdd__input"
+          className="pun-add__input"
         />
       </div>
       {required.pun && (
-        <div className="TextInput__errorMessage">{errorMessage}</div>
+        <div className="text-input__errorMessage">{errorMessage}</div>
       )}
       <SubmitButton onClick={handleSubmit}/>
     </form>

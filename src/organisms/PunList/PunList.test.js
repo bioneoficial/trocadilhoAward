@@ -45,7 +45,7 @@ describe("<PunList/>", () => {
     render(<PunList />);
     const tableHeaderRow = 1;
     const punsTable = screen.getByRole("table");
-
+    expect(punsTable).toHaveClass("pun-list__table");
     expect(punsTable).toBeInTheDocument();
 
     const tableRows = screen.getAllByRole("row");

@@ -12,8 +12,8 @@ const TextInput = ({
   id,
 }) => {
   return (
-    <div className="TextInput__container">
-      <label className="TextInput_label" htmlFor={id}>
+    <div className="text-input__container">
+      <label className="text-input_label" htmlFor={id}>
         {title}
       </label>
       <input
@@ -24,7 +24,7 @@ const TextInput = ({
         required={required}
         maxLength={maxLength}
         disabled={disabled}
-        className="TextInput__input"
+        className="text-input__input"
       />
     </div>
   );
