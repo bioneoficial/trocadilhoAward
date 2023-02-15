@@ -4,8 +4,8 @@ import "./Welcome.css";
 
 const Welcome = () => {
   const navigate = useNavigate();
-
-  const onClick = () => navigate("/lista-trocadilho");
+  const onStart = () => navigate("/lista-trocadilho");
+  const onReset = () => localStorage.clear();
 
   return (
     <div className="container">
@@ -19,7 +19,8 @@ const Welcome = () => {
         DEIXEI A ESTRUTURA PRONTA MAS VAI SER TUDO BEM CRU ATE TER O CHECK PRA
         IR REFINANDO.
       </p>
-      <button onClick={onClick}>INICIAR</button>
+      <button onClick={onStart}>INICIAR</button>
+      <button onClick={onReset}>RESET STORAGE</button>
     </div>
   );
 };

@@ -8,3 +8,7 @@
   border: none;
   width: max-content;
 }
+
+.likeButton:hover {
+  background-color: #00b300;
+}

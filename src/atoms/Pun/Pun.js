@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import LikeButton from "../LikeButton";
 
 const Pun = ({ puns }) => {
+  const [punList, setPunList] = useState(puns);
+
+  const upVote = (index) => {
+    const updatedPunList = [...punList];
+    updatedPunList[index].votes++;
+    setPunList(updatedPunList);
+    localStorage.setItem("puns", JSON.stringify(updatedPunList));
+  };
+
   return (
     <tbody>
-      {puns.map((pun, index) => (
+      {punList.map((pun, index) => (
         <tr key={index} className="table_row_pun">
           <td className="table_row__data">{pun.date}</td>
           <td className="table_row__data">{pun.votes}</td>
@@ -12,7 +21,7 @@ const Pun = ({ puns }) => {
           <td className="table_row__data">{pun.context}</td>
           <td className="table_row__data">{pun.message}</td>
           <td className="table_row__data">
-            <LikeButton />
+            <LikeButton onClick={() => upVote(index)} />
           </td>
         </tr>
       ))}

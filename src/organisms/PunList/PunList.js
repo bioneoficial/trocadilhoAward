@@ -4,7 +4,9 @@ import "./PunList.css";
 import { PUNS } from "../../utils/enums";
 
 const PunList = () => {
-  localStorage.setItem("puns", JSON.stringify(PUNS));
+  if(!localStorage.getItem("puns")){
+    localStorage.setItem("puns", JSON.stringify(PUNS));
+  }
   const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
   return (
     <>
