@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import LikeButton from "./LikeButton";
 
 describe("<LikeButton />", () => {
@@ -15,7 +16,8 @@ describe("<LikeButton />", () => {
     render(<LikeButton onClick={onClick} />);
 
     const likeButton = screen.getByRole("button", { name: /like/i });
-    fireEvent.click(likeButton);
+    userEvent.hover(likeButton);
+    userEvent.click(likeButton);
 
     expect(onClick).toHaveBeenCalled();
   });
