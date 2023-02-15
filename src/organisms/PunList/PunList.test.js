@@ -41,7 +41,6 @@ describe("<PunList/>", () => {
     },
   ];
 
-
   it("A list of available puns should be displayed on the page", () => {
     render(<PunList />);
     const tableHeaderRow = 1;
@@ -51,5 +50,26 @@ describe("<PunList/>", () => {
 
     const tableRows = screen.getAllByRole("row");
     expect(tableRows.length).toEqual(punsAvailable.length + tableHeaderRow);
+  });
+});
+
+it("displays the correct number of puns in the table", () => {
+  render(<PunList />);
+  const punRows = screen.getAllByRole("row");
+  const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
+  expect(punRows.length - 1).toBe(punsFromStorage.length);
+});
+
+it("displays the correct data for each pun in the table", () => {
+  render(<PunList />);
+  const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
+  const punRows = screen.getAllByRole("row");
+  punRows.slice(1).forEach((row, index) => {
+    const [date, votes, dev, context, message] = row.cells;
+    expect(date.textContent).toBe(punsFromStorage[index].date);
+    expect(votes.textContent).toBe(punsFromStorage[index].votes.toString());
+    expect(dev.textContent).toBe(punsFromStorage[index].dev);
+    expect(context.textContent).toBe(punsFromStorage[index].context);
+    expect(message.textContent).toBe(punsFromStorage[index].message);
   });
 });

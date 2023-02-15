@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Pun from "./Pun";
 
 describe("<Pun />", () => {
@@ -60,7 +61,10 @@ describe("<Pun />", () => {
       expect(messageCell).toBeInTheDocument();
       expect(row).toContainElement(messageCell);
 
-      const likeButton = screen.queryAllByRole("button", { name: /like/i, container: row });
+      const likeButton = screen.queryAllByRole("button", {
+        name: /like/i,
+        container: row,
+      });
       expect(likeButton.length).toBeGreaterThan(0);
       expect(likeButton[0]).toBeInTheDocument();
     }

@@ -49,7 +49,6 @@ const PunAdd = () => {
       };
       puns.push(newPun);
       window.localStorage.setItem("puns", JSON.stringify(puns));
-      console.log("Form submitted", { date, dev, context, pun });
       clearFields();
     }
   };
@@ -60,7 +59,7 @@ const PunAdd = () => {
   }, []);
 
   return (
-    <form className="PunAdd__form" onSubmit={handleSubmit}>
+    <form className="PunAdd__form">
       <div className="PunAdd__inputWrapper">
         <TextInput
           id={"data"}
@@ -117,7 +116,7 @@ const PunAdd = () => {
       {required.pun && (
         <div className="TextInput__errorMessage">{errorMessage}</div>
       )}
-      <SubmitButton />
+      <SubmitButton onClick={handleSubmit}/>
     </form>
   );
 };

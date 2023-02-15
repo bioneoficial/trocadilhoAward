@@ -30,3 +30,9 @@ describe("<LikeButton />", () => {
     expect(likeButton).toHaveTextContent(/DEIXE SEU LIKE!/i);
   });
 });
+
+it("renders a button with the correct class", () => {
+  render(<LikeButton />);
+  const likeButton = screen.getByRole("button", { name: /like/i });
+  expect(likeButton).toHaveClass("likeButton");
+});
