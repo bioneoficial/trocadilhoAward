@@ -22,7 +22,8 @@
   margin: 0 4rem;
 }
 
-.pun-list__table th, .pun-list__table td {
+.pun-list__table th,
+.pun-list__table td {
   padding: 8px;
 }
 
@@ -34,7 +35,7 @@
   background-color: #ddd;
 }
 
-
-.pum-list__empy-message, .pun-list__table__row__head__title{
+.pum-list__empy-message,
+.pun-list__table__row__head__title {
   text-transform: capitalize;
 }

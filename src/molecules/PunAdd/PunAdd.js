@@ -10,6 +10,7 @@ const PunAdd = () => {
   const [dev, setDev] = useState("");
   const [context, setContext] = useState("");
   const [pun, setPun] = useState("");
+  const [dateError, setDateError] = useState("");
   const [required, setRequired] = useState({
     dev: false,
     context: false,
@@ -38,6 +39,7 @@ const PunAdd = () => {
     setContext("");
     setPun("");
     setDate("");
+    setDateError("");
   };
 
   const handleSubmit = (e) => {
@@ -71,9 +73,11 @@ const PunAdd = () => {
       (month === 2 && day > maxDaysLeapYear)
     ) {
       console.error("Invalid date:", dateString);
+      setDateError("Data inválida");
       setDate("");
       return false;
     }
+    setDateError("");
     return true;
   };
 
@@ -107,6 +111,7 @@ const PunAdd = () => {
       {required.date && (
         <div className="text-input__errorMessage">{errorMessage}</div>
       )}
+      {dateError && <div className="text-input__errorMessage">{dateError}</div>}
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"dev"}
@@ -152,7 +157,11 @@ const PunAdd = () => {
       {required.pun && (
         <div className="text-input__errorMessage">{errorMessage}</div>
       )}
-      <Button onClick={handleSubmit} buttonText="Adicionar"  classFromProps="button--submit"/>
+      <Button
+        onClick={handleSubmit}
+        buttonText="Adicionar"
+        classFromProps="button--submit"
+      />
     </form>
   );
 };
