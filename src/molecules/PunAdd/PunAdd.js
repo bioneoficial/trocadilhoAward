@@ -108,9 +108,9 @@ const PunAdd = () => {
           maxLength={10}
         />
       </div>
-      {required.date && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
+      <div className="text-input__errorMessage">
+        {required.date && errorMessage}
+      </div>
       {dateError && <div className="text-input__errorMessage">{dateError}</div>}
       <div className="pun-add__inputWrapper">
         <TextInput
@@ -124,9 +124,9 @@ const PunAdd = () => {
           className="pun-add__input"
         />
       </div>
-      {required.dev && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
+      <div className="text-input__errorMessage">
+        {required.dev && errorMessage}
+      </div>
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"context"}
@@ -139,9 +139,9 @@ const PunAdd = () => {
           className="pun-add__input"
         />
       </div>
-      {required.context && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
+      <div className="text-input__errorMessage">
+        {required.context && errorMessage}
+      </div>
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"pun"}
@@ -154,9 +154,9 @@ const PunAdd = () => {
           className="pun-add__input"
         />
       </div>
-      {required.pun && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
+      <div className="text-input__errorMessage">
+        {required.pun && errorMessage}
+      </div>
       <Button
         onClick={handleSubmit}
         buttonText="Adicionar"

@@ -1,4 +1,5 @@
 .text-input__errorMessage {
+  min-height: 16px;
   font-family: "Nunito";
   font-style: normal;
   font-weight: 400;
