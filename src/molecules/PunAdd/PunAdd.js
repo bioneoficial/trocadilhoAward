@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SubmitButton from "../../atoms/SubmitButton";
 import TextInput from "../../atoms/TextInput";
-import { formatDate } from "../../utils/common";
 import { ERRORMESSAGE as errorMessage } from "../../utils/enums";
+import { formatBrazilianDate, dateMask } from "../../utils/common";
 import "./PunAdd.css";
 
 const PunAdd = () => {
@@ -19,10 +19,15 @@ const PunAdd = () => {
 
   const validateFields = () => {
     const newRequired = {
+      date: date.length !== 10,
       dev: dev.length === 0,
       context: context.length === 0,
       pun: pun.length === 0,
-      ready: dev.length > 0 && context.length > 0 && pun.length > 0 && date,
+      ready:
+        dev.length > 0 &&
+        context.length > 0 &&
+        pun.length > 0 &&
+        date.length === 10,
     };
     setRequired(newRequired);
     return newRequired.ready;
@@ -32,6 +37,7 @@ const PunAdd = () => {
     setDev("");
     setContext("");
     setPun("");
+    setDate("");
   };
 
   const handleSubmit = (e) => {
@@ -53,10 +59,37 @@ const PunAdd = () => {
     }
   };
 
-  useEffect(() => {
+  const validateDate = (inputDate, dateString) => {
+    console.log(inputDate);
     const today = new Date();
-    setDate(formatDate(today));
-  }, []);
+    const day = parseInt(dateString.substring(0, 2));
+    const month = parseInt(dateString.substring(3, 5));
+    const year = parseInt(dateString.substring(6, 10));
+    const maxDaysLeapYear = new Date(year, 2, 0).getDate();
+    if (
+      isNaN(inputDate.getTime()) ||
+      inputDate.getTime() > today.getTime() ||
+      (month === 2 && day > maxDaysLeapYear)
+    ) {
+      console.error("Invalid date:", dateString);
+      setDate("");
+      return false;
+    }
+    return true;
+  };
+
+  const handleChangeDate = (value) => {
+    const newValue = dateMask(value);
+
+    if (newValue.length === 10) {
+      const inputDate = new Date(formatBrazilianDate(newValue));
+      if (!validateDate(inputDate, newValue)) {
+        return;
+      }
+    }
+
+    setDate(newValue);
+  };
 
   return (
     <form className="pun-add__form" role={"form"}>
@@ -64,13 +97,17 @@ const PunAdd = () => {
         <TextInput
           id={"data"}
           title="Data"
+          placeholder="dd/mm/aaaa"
           value={date}
           required={required.date}
+          onChange={(e) => handleChangeDate(e.target.value)}
           className="pun-add__input"
-          disabled={true}
           maxLength={10}
         />
       </div>
+      {required.date && (
+        <div className="text-input__errorMessage">{errorMessage}</div>
+      )}
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"dev"}
@@ -116,7 +153,7 @@ const PunAdd = () => {
       {required.pun && (
         <div className="text-input__errorMessage">{errorMessage}</div>
       )}
-      <SubmitButton onClick={handleSubmit}/>
+      <SubmitButton onClick={handleSubmit} />
     </form>
   );
 };

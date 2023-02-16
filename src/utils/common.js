@@ -1,7 +1,15 @@
-  
-  export const formatDate = (date) => {
-    const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const year = String(date.getFullYear());
-    return `${day}/${month}/${year}`;
-  };
+
+export const formatBrazilianDate = (dateString) => {
+  const day = dateString.substring(0, 2);
+  const month = dateString.substring(3, 5);
+  const year = dateString.substring(6, 10);
+  return `${year}-${month}-${day}`;
+};
+
+export const dateMask = (value) => {
+  return value
+    .replace(/\D/g, "")
+    .replace(/(\d{2})(\d)/, "$1/$2")
+    .replace(/(\d{2})(\d)/, "$1/$2")
+    .replace(/(\d{4})(\d)/, "$1");
+};
