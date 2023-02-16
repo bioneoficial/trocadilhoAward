@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import SubmitButton from "../../atoms/SubmitButton";
+import React, { useState } from "react";
 import TextInput from "../../atoms/TextInput";
-import { formatDate } from "../../utils/common";
 import { ERRORMESSAGE as errorMessage } from "../../utils/enums";
+import { formatBrazilianDate, dateMask } from "../../utils/common";
 import "./PunAdd.css";
+import Button from "../../atoms/Button";
 
 const PunAdd = () => {
   const [date, setDate] = useState("");
   const [dev, setDev] = useState("");
   const [context, setContext] = useState("");
   const [pun, setPun] = useState("");
+  const [dateError, setDateError] = useState("");
   const [required, setRequired] = useState({
     dev: false,
     context: false,
@@ -19,10 +20,15 @@ const PunAdd = () => {
 
   const validateFields = () => {
     const newRequired = {
+      date: date.length !== 10,
       dev: dev.length === 0,
       context: context.length === 0,
       pun: pun.length === 0,
-      ready: dev.length > 0 && context.length > 0 && pun.length > 0 && date,
+      ready:
+        dev.length > 0 &&
+        context.length > 0 &&
+        pun.length > 0 &&
+        date.length === 10,
     };
     setRequired(newRequired);
     return newRequired.ready;
@@ -32,6 +38,8 @@ const PunAdd = () => {
     setDev("");
     setContext("");
     setPun("");
+    setDate("");
+    setDateError("");
   };
 
   const handleSubmit = (e) => {
@@ -53,24 +61,57 @@ const PunAdd = () => {
     }
   };
 
-  useEffect(() => {
+  const validateDate = (inputDate, dateString) => {
     const today = new Date();
-    setDate(formatDate(today));
-  }, []);
+    const day = parseInt(dateString.substring(0, 2));
+    const month = parseInt(dateString.substring(3, 5));
+    const year = parseInt(dateString.substring(6, 10));
+    const maxDaysLeapYear = new Date(year, 2, 0).getDate();
+    if (
+      isNaN(inputDate.getTime()) ||
+      inputDate.getTime() > today.getTime() ||
+      (month === 2 && day > maxDaysLeapYear)
+    ) {
+      console.error("Invalid date:", dateString);
+      setDateError("Data inválida");
+      setDate("");
+      return false;
+    }
+    setDateError("");
+    return true;
+  };
+
+  const handleChangeDate = (value) => {
+    const newValue = dateMask(value);
+
+    if (newValue.length === 10) {
+      const inputDate = new Date(formatBrazilianDate(newValue));
+      if (!validateDate(inputDate, newValue)) {
+        return;
+      }
+    }
+
+    setDate(newValue);
+  };
 
   return (
-    <form className="pun-add__form" role={"form"}>
+    <form className="pun-add__form">
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"data"}
           title="Data"
+          placeholder="dd/mm/aaaa"
           value={date}
           required={required.date}
+          onChange={(e) => handleChangeDate(e.target.value)}
           className="pun-add__input"
-          disabled={true}
           maxLength={10}
         />
       </div>
+      <div className="text-input__errorMessage">
+        {required.date && errorMessage}
+      </div>
+      {dateError && <div className="text-input__errorMessage">{dateError}</div>}
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"dev"}
@@ -83,9 +124,9 @@ const PunAdd = () => {
           className="pun-add__input"
         />
       </div>
-      {required.dev && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
+      <div className="text-input__errorMessage">
+        {required.dev && errorMessage}
+      </div>
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"context"}
@@ -98,9 +139,9 @@ const PunAdd = () => {
           className="pun-add__input"
         />
       </div>
-      {required.context && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
+      <div className="text-input__errorMessage">
+        {required.context && errorMessage}
+      </div>
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"pun"}
@@ -113,10 +154,14 @@ const PunAdd = () => {
           className="pun-add__input"
         />
       </div>
-      {required.pun && (
-        <div className="text-input__errorMessage">{errorMessage}</div>
-      )}
-      <SubmitButton onClick={handleSubmit}/>
+      <div className="text-input__errorMessage">
+        {required.pun && errorMessage}
+      </div>
+      <Button
+        onClick={handleSubmit}
+        buttonText="Adicionar"
+        classFromProps="button--submit"
+      />
     </form>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import LikeButton from "../LikeButton";
+import Button from "../../atoms/Button";
 import "./Pun.css";
 
 const Pun = ({ puns }) => {
@@ -31,7 +31,11 @@ const Pun = ({ puns }) => {
             {pun.message}
           </td>
           <td className="pun__table-cell pun__table-cell--button">
-            <LikeButton onClick={() => upVote(pun.id)} />
+            <Button
+              onClick={() => upVote(pun.id)}
+              classFromProps="button--like"
+              buttonText="deixe seu like!"
+            />
           </td>
         </tr>
       ))}
