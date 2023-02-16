@@ -64,4 +64,6 @@ const BESTPUNTABLEHEAD = [
   "trocadilho",
 ];
 
-export { TABS, PUNS, ERRORMESSAGE, BESTPUNTABLEHEAD };
+const DEVBYPUNS = ["colocação", "número de trocadilhos", "dev"];
+
+export { TABS, PUNS, ERRORMESSAGE, BESTPUNTABLEHEAD, DEVBYPUNS };

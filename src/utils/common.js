@@ -1,21 +1,17 @@
-export const threeMostVotedPun = () => {
-  const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
-  const sortedPuns = punsFromStorage.sort((a, b) => b.votes - a.votes);
+export const threeMostVotedPun = (puns) => {
+  const sortedPuns = puns.sort((a, b) => b.votes - a.votes);
   return sortedPuns.slice(0, 3);
 };
 
 export const mostPunByDev = (puns) => {
-  const punsByDev = puns.reduce((acc, pun) => {
-    if (acc[pun.dev]) {
-      acc[pun.dev]++;
-    } else {
-      acc[pun.dev] = 1;
-    }
-    return acc;
-  }, {});
-  return Object.keys(punsByDev).reduce((a, b) =>
-    punsByDev[a] > punsByDev[b] ? a : b
-  );
+  return Object.entries(
+    puns.reduce((accumulator, pun) => {
+      accumulator[pun.dev] = (accumulator[pun.dev] || 0) + 1;
+      return accumulator;
+    }, {})
+  )
+    .map(([dev, punQty]) => ({ dev, punQty }))
+    .sort((a, b) => b.punQty - a.punQty);
 };
 
 export const formatBrazilianDate = (dateString) => {

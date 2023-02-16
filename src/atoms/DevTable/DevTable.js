@@ -1,8 +1,9 @@
 import React from "react";
-import "./RankingTable.css";
+import "./DevTable.css";
 
-const RankingTable = ({ tableHead, tableRowContent }) => {
+const DevTable = ({ tableHead, tableRowContent }) => {
   const pos = ["gold", "silver", "bronze"];
+  console.log(tableRowContent);
   return (
     <table className="ranking-table">
       <thead>
@@ -16,23 +17,17 @@ const RankingTable = ({ tableHead, tableRowContent }) => {
       </thead>
       <tbody>
         {tableRowContent.map((row, index) => (
-          <tr className="ranking-table__row" key={row.id}>
+          <tr className="ranking-table__row" key={index}>
             <td
               className={`ranking-table__cell ranking-table__cell--rank-${pos[index]}`}
             >
               {index + 1}
             </td>
-            <td className="ranking-table__cell ranking-table__cell--votes">
-              {row.votes}
+            <td className="ranking-table__cell ranking-table__cell--punQty">
+              {row.punQty}
             </td>
             <td className="ranking-table__cell ranking-table__cell--dev">
               {row.dev}
-            </td>
-            <td className="ranking-table__cell ranking-table__cell--context">
-              {row.context}
-            </td>
-            <td className="ranking-table__cell ranking-table__cell--message">
-              {row.message}
             </td>
           </tr>
         ))}
@@ -41,4 +36,4 @@ const RankingTable = ({ tableHead, tableRowContent }) => {
   );
 };
 
-export default RankingTable;
+export default DevTable;
