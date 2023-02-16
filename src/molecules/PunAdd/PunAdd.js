@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import SubmitButton from "../../atoms/SubmitButton";
 import TextInput from "../../atoms/TextInput";
 import { ERRORMESSAGE as errorMessage } from "../../utils/enums";
 import { formatBrazilianDate, dateMask } from "../../utils/common";
 import "./PunAdd.css";
+import Button from "../../atoms/Button";
 
 const PunAdd = () => {
   const [date, setDate] = useState("");
@@ -153,7 +153,7 @@ const PunAdd = () => {
       {required.pun && (
         <div className="text-input__errorMessage">{errorMessage}</div>
       )}
-      <SubmitButton onClick={handleSubmit} />
+      <Button onClick={handleSubmit} buttonText="Adicionar"  classFromProps="submit-button"/>
     </form>
   );
 };

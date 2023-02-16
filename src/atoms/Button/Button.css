@@ -1,3 +1,19 @@
+.like-button {
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 0.6rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border: none;
+  width: max-content;
+  text-transform: uppercase;
+}
+
+.like-button:hover {
+  background-color: #00b300;
+}
+
 .submit-button {
   background-color: black;
   border: none;
