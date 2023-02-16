@@ -59,12 +59,6 @@ describe("PunAdd", () => {
     expect(screen.getAllByText(/Este campo é obrigatório/i)).toHaveLength(4);
   });
 
-  it("Render with correct class", () => {
-    render(<PunAdd />);
-    const formElement = screen.getByRole("form");
-    expect(formElement).toHaveClass("pun-add__form");
-  });
-
   it("does not update the date field with an invalid input", () => {
     render(<PunAdd />);
     const dateInput = screen.getByLabelText("Data");

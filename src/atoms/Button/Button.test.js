@@ -37,22 +37,22 @@ describe("<Button />", () => {
 
   it("renders a button with the correct like class", () => {
     renderLikeSetup();
-    const Button = screen.getByRole("button", { name: /like/i });
+    const Button = screen.getByRole("button", { name: /deixe seu like/i });
     expect(Button).toHaveClass("button--like");
   });
 
   it("calls the onClick function when clicked", () => {
     const onClick = jest.fn();
     renderLikeSetup(onClick);
-    const Button = screen.getAllByRole("button", { name: /like/i });
-    userEvent.hover(Button[0]);
-    userEvent.click(Button[0]);
+    const Button = screen.getByRole("button", { name: /deixe seu like/i });
+    userEvent.hover(Button);
+    userEvent.click(Button);
     expect(onClick).toHaveBeenCalled();
   });
 
   it("displays the correct text content", () => {
     renderLikeSetup();
-    const Button = screen.getByRole("button", { name: /like/i });
+    const Button = screen.getByRole("button");
     expect(Button).toHaveTextContent(/DEIXE SEU LIKE!/i);
   });
 

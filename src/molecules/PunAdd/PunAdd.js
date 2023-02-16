@@ -95,7 +95,7 @@ const PunAdd = () => {
   };
 
   return (
-    <form className="pun-add__form" role={"form"}>
+    <form className="pun-add__form">
       <div className="pun-add__inputWrapper">
         <TextInput
           id={"data"}
