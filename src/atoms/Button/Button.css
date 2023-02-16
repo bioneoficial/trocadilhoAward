@@ -1,4 +1,4 @@
-.like-button {
+.button--like {
   color: white;
   background-color: green;
   border-radius: 5px;
@@ -10,11 +10,11 @@
   text-transform: uppercase;
 }
 
-.like-button:hover {
+.button--like:hover {
   background-color: #00b300;
 }
 
-.submit-button {
+.button--submit {
   background-color: black;
   border: none;
   color: white;
@@ -27,16 +27,16 @@
   border-radius: 5px;
 }
 
-.submit-button:hover {
+.button--submit:hover {
   background-color: #555555;
 }
 
-.submit-button:active {
+.button--submit:active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
 
-.submit-button:focus {
+.button--submit:focus {
   outline: none;
   background-color: #555555;
 }

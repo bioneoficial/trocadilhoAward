@@ -8,7 +8,7 @@ describe("<Button />", () => {
     return render(
       <Button
         onClick={mockOnClick ?? onClick}
-        classFromProps="like-button"
+        classFromProps="button--like"
         buttonText="deixe seu like!"
       />
     );
@@ -19,7 +19,7 @@ describe("<Button />", () => {
       <Button
         onClick={mockOnClick ?? onClick}
         buttonText="Adicionar"
-        classFromProps="submit-button"
+        classFromProps="button--submit"
       />
     );
   };
@@ -32,13 +32,13 @@ describe("<Button />", () => {
   it("renders a button with the correct submit class", () => {
     renderSubmitSetup();
     const submitButton = screen.getByRole("button", { name: /adicionar/i });
-    expect(submitButton).toHaveClass("submit-button");
+    expect(submitButton).toHaveClass("button--submit");
   });
 
   it("renders a button with the correct like class", () => {
     renderLikeSetup();
     const Button = screen.getByRole("button", { name: /like/i });
-    expect(Button).toHaveClass("like-button");
+    expect(Button).toHaveClass("button--like");
   });
 
   it("calls the onClick function when clicked", () => {
@@ -47,15 +47,12 @@ describe("<Button />", () => {
     const Button = screen.getAllByRole("button", { name: /like/i });
     userEvent.hover(Button[0]);
     userEvent.click(Button[0]);
-
     expect(onClick).toHaveBeenCalled();
   });
 
   it("displays the correct text content", () => {
     renderLikeSetup();
-
     const Button = screen.getByRole("button", { name: /like/i });
-
     expect(Button).toHaveTextContent(/DEIXE SEU LIKE!/i);
   });
 

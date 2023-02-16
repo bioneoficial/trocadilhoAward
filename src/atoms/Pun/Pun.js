@@ -31,7 +31,7 @@ const Pun = ({ puns }) => {
             {pun.message}
           </td>
           <td className="pun__table-cell pun__table-cell--button">
-            <Button onClick={() => upVote(pun.id)} classFromProps="like-button" buttonText="deixe seu like!" />
+            <Button onClick={() => upVote(pun.id)} classFromProps="button--like" buttonText="deixe seu like!" />
           </td>
         </tr>
       ))}

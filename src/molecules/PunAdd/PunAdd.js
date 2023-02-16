@@ -60,7 +60,6 @@ const PunAdd = () => {
   };
 
   const validateDate = (inputDate, dateString) => {
-    console.log(inputDate);
     const today = new Date();
     const day = parseInt(dateString.substring(0, 2));
     const month = parseInt(dateString.substring(3, 5));
@@ -153,7 +152,7 @@ const PunAdd = () => {
       {required.pun && (
         <div className="text-input__errorMessage">{errorMessage}</div>
       )}
-      <Button onClick={handleSubmit} buttonText="Adicionar"  classFromProps="submit-button"/>
+      <Button onClick={handleSubmit} buttonText="Adicionar"  classFromProps="button--submit"/>
     </form>
   );
 };
