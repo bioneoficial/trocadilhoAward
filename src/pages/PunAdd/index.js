@@ -1,5 +1,5 @@
 import React from "react";
-import PunAdd from "../../organisms/PunAdd";
+import PunAdd from "../../molecules/PunAdd";
 import MainTemplate from "../../templates/MainTemplate";
 
 const PunAddPage = () => {

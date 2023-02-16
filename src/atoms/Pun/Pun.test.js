@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import Pun from "./Pun";
 
 describe("<Pun />", () => {
@@ -60,9 +61,30 @@ describe("<Pun />", () => {
       expect(messageCell).toBeInTheDocument();
       expect(row).toContainElement(messageCell);
 
-      const likeButton = screen.queryAllByRole("button", { name: /like/i, container: row });
+      const likeButton = screen.queryAllByRole("button", {
+        name: /like/i,
+        container: row,
+      });
       expect(likeButton.length).toBeGreaterThan(0);
       expect(likeButton[0]).toBeInTheDocument();
+    }
+  });
+
+  it("Render Pun with correct class", () => {
+    render(
+      <table>
+        <Pun puns={puns} />
+      </table>
+    );
+
+    const punRows = screen.queryAllByRole("row");
+
+    expect(punRows).toHaveLength(puns.length);
+
+    for (let i = 0; i < puns.length; i++) {
+      const row = punRows[i];
+
+      expect(row).toHaveClass("pun__table-row");
     }
   });
 });

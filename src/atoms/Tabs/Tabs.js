@@ -24,6 +24,7 @@ const Tabs = ({ currentTab }) => {
               key={tab.name}
             >
               <span
+              role={"tab"}
                 className="tabs__tab"
                 key={tab.name}
                 onClick={() => onClick(tab)}

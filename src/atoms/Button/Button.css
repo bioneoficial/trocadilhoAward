@@ -1,0 +1,42 @@
+.button--like {
+  color: white;
+  background-color: green;
+  border-radius: 5px;
+  padding: 0.6rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border: none;
+  width: max-content;
+  text-transform: uppercase;
+}
+
+.button--like:hover {
+  background-color: #00b300;
+}
+
+.button--submit {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button--submit:hover {
+  background-color: #555555;
+}
+
+.button--submit:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button--submit:focus {
+  outline: none;
+  background-color: #555555;
+}

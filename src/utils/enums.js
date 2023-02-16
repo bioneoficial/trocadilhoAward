@@ -24,8 +24,7 @@ const PUNS = [
     date: "13/02/2023",
     votes: 1,
     dev: "julia.albq",
-    context:
-      "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
+    context: "Lorem ipsum dolor,sit alit. Fugiat animi quaecto possimustis?",
     message: "Lorem ipsus",
   },
   {
@@ -33,8 +32,7 @@ const PUNS = [
     date: "14/02/2023",
     votes: 2,
     dev: "joao.holanda",
-    context:
-      "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
+    context: "Lorem ipsum dolor,sit alit.",
     message: "Lorem ipsus",
   },
   {
@@ -43,7 +41,7 @@ const PUNS = [
     votes: 3,
     dev: "lucas.oliveira",
     context:
-      "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
+      "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possim",
     message: "Lorem ipsus",
   },
   {
@@ -51,10 +49,11 @@ const PUNS = [
     date: "11/02/2023",
     votes: 4,
     dev: "daniel.brasil",
-    context:
-      "Lorem ipsum dolor,sit alit. Fugiat animi quaerat assumenda architecto possimus qui itaque reprehenderit tempore provident debitis? Dicta blanditiis mollitia reiciendis saepe. Alias, facere? Excepturi, officia obcaecati.",
+    context: "Lorem ipsum dolor,sit alit. Fugiat ani",
     message: "Lorem ipsus",
   },
 ];
 
-export { TABS, PUNS };
+const ERRORMESSAGE = "Este campo é obrigatório";
+
+export { TABS, PUNS, ERRORMESSAGE };

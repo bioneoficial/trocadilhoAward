@@ -1,3 +1,8 @@
-.pun__table-row{
-    text-transform: capitalize;
+.pun__table-row {
+  text-transform: capitalize;
+}
+
+.pun__table-cell--message,
+.pun__table-cell--context {
+  width: 25%;
 }
