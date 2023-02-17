@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import PunList from "./index";
+import { PUNS } from "../../utils/enums";
 
 describe("<PunList/>", () => {
   const punsAvailable = [
@@ -42,6 +43,7 @@ describe("<PunList/>", () => {
   ];
 
   it("A list of available puns should be displayed on the page", () => {
+    localStorage.setItem("puns", JSON.stringify(PUNS));
     render(<PunList />);
     const tableHeaderRow = 1;
     const punsTable = screen.getByRole("table");
@@ -55,6 +57,7 @@ describe("<PunList/>", () => {
 
 it("displays the correct number of puns in the table", () => {
   render(<PunList />);
+  localStorage.setItem("puns", JSON.stringify(PUNS));
   const punRows = screen.getAllByRole("row");
   const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
   expect(punRows.length - 1).toBe(punsFromStorage.length);
