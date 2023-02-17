@@ -6,7 +6,7 @@ const RankingTable = ({ tableHead, tableRowContent }) => {
   return (
     <React.Fragment>
       {!tableRowContent || tableRowContent.length === 0 ? (
-        <h2 className="ranking-empty">
+        <h2 className="ranking-empty-message">
           Tabela de Ranking de trocadilhos vazia.
         </h2>
       ) : (
