@@ -36,21 +36,29 @@ export const addRank = (arr) => {
     arr[0].rank = rank;
     for (let i = 1; i < arr.length; i++) {
       if (arr[i].punQty !== arr[i - 1].punQty) {
-        rank = i + 1;
-        if (rank >= 4) break;
+        rank++;
+        if (rank === 4) break;
+        arr[i].rank = rank;
+      } else if (arr[i].votes === arr[i - 1].votes) {
+        arr[i].rank = rank;
+      } else {
+        rank = i;
         arr[i].rank = rank;
       }
-      arr[i].rank = rank;
     }
   } else if (arr[0]?.votes) {
     arr[0].rank = rank;
     for (let i = 1; i < arr.length; i++) {
       if (arr[i].votes !== arr[i - 1].votes) {
-        rank = i + 1;
-        if (rank >= 4) break;
+        rank++;
+        if (rank === 4) break;
+        arr[i].rank = rank;
+      } else if (arr[i].votes === arr[i - 1].votes) {
+        arr[i].rank = rank;
+      } else {
+        rank = i;
         arr[i].rank = rank;
       }
-      arr[i].rank = rank;
     }
   }
   return arr.filter((el) => el.rank !== undefined);
