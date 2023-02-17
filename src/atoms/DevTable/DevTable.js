@@ -22,9 +22,11 @@ const DevTable = ({ tableHead, tableRowContent }) => {
             {tableRowContent.map((row, index) => (
               <tr className="dev-table__row" key={index}>
                 <td
-                  className={`dev-table__cell dev-table__cell--rank-${pos[index]}`}
+                  className={`dev-table__cell dev-table__cell--rank-${
+                    pos[row.rank - 1]
+                  }`}
                 >
-                  {index + 1}
+                  {row.rank}
                 </td>
                 <td className="dev-table__cell dev-table__cell--punQty">
                   {row.punQty}
