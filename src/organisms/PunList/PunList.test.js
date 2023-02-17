@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import PunList from "./PunList";
+import PunList from "./index";
 
 describe("<PunList/>", () => {
   const punsAvailable = [

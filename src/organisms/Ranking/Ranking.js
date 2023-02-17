@@ -1,6 +1,6 @@
 import React from "react";
-import DevTable from "../../atoms/DevTable/DevTable";
-import RankingTable from "../../atoms/RankingTable";
+import DevTable from "../../atoms/DevTable/index";
+import RankingTable from "../../atoms/RankingTable/index";
 import { threeMostVotedPun, mostPunByDev } from "../../utils/common";
 import { BESTPUNTABLEHEAD, DEVBYPUNS } from "../../utils/enums";
 import "./Ranking.css";

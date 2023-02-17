@@ -1,5 +1,5 @@
 import React from "react";
-import Pun from "../../atoms/Pun";
+import Pun from "../../atoms/Pun/index";
 import "./PunList.css";
 import { PUNS } from "../../utils/enums";
 
