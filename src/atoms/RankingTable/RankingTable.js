@@ -2,9 +2,13 @@ import React from "react";
 import "./RankingTable.css";
 
 const RankingTable = ({ tableHead, tableRowContent }) => {
+  if (!tableRowContent || tableRowContent.length === 0) {
+    return <h2 className="ranking-empty">No items to display.</h2>;
+  }
+
   const pos = ["gold", "silver", "bronze"];
   return (
-    <table className="ranking-table">
+    <table className="ranking-table" aria-label="Ranking Table">
       <thead>
         <tr className="ranking-table__row">
           {tableHead.map((head) => (
