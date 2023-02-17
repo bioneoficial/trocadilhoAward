@@ -125,7 +125,7 @@ describe("<DevTable />", () => {
     renderEmptySetup();
 
     const emptyMessage = screen.getByRole("heading", {
-      name: /no items to display/i,
+      name: /Tabela de Ranking de trocadilhos vazia./i,
     });
 
     expect(emptyMessage).toBeInTheDocument();
