@@ -46,7 +46,7 @@ export const addRank = (arr) => {
     arr[0].rank = rank;
     for (let i = 1; i < arr.length; i++) {
       if (arr[i].votes !== arr[i - 1].votes) {
-        rank++;
+        rank = i + 1;
         if (rank >= 4) break;
         arr[i].rank = rank;
       }
