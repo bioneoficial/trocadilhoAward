@@ -1,29 +1,16 @@
-.ranking-table {
+.dev-table {
   font-family: "Nunito", sans-serif;
-  margin: 0 auto;
   border-collapse: collapse;
   width: 90%;
-  border-spacing: 0;
   text-transform: capitalize;
 }
 
-.ranking-table__row {
-  background-color: #fff;
-  border-bottom: 1px solid #ccc;
-}
-
-.ranking-table__header {
-  color: #333;
-  font-size: 14px;
+.dev-table__header {
   font-weight: 700;
-  line-height: 20px;
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
 }
 
-.ranking-table__cell {
-  color: #333;
+.dev-table__header,
+.dev-table__cell {
   font-size: 14px;
   line-height: 20px;
   border: 1px solid #ddd;
@@ -31,34 +18,21 @@
   text-align: left;
 }
 
-.RankingTable__table .ranking-table__cell:first-child {
-  width: 10%;
-}
-
-.RankingTable__table .ranking-table__cell:nth-child(2) {
-  width: 10%;
-}
-
-.RankingTable__table .ranking-table__cell:nth-child(3) {
-  width: 10%;
-}
-
-.RankingTable__table .ranking-table__cell:nth-child(4) {
-  width: 35%;
-}
-
-.RankingTable__table .ranking-table__cell:nth-child(5) {
-  width: 35%;
-}
-
-.ranking-table__cell--rank-gold {
+.dev-table__cell--rank-gold {
   background-color: gold;
 }
 
-.ranking-table__cell--rank-silver {
+.dev-table__cell--rank-silver {
   background-color: silver;
 }
 
-.ranking-table__cell--rank-bronze {
+.dev-table__cell--rank-bronze {
   background-color: #cd7f32;
+}
+
+.dev-table__cell:not(.dev-table__cell--rank-gold):not(
+    .dev-table__cell--rank-silver
+  ):not(.dev-table__cell--rank-bronze):hover {
+  background-color: #ddd;
+  transition: all 0.2s ease-in-out;
 }
