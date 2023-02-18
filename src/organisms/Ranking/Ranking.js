@@ -1,14 +1,14 @@
 import React from "react";
 import DevTable from "../../atoms/DevTable/index";
 import RankingTable from "../../atoms/RankingTable/index";
-import { MostVotedPunList, mostPunByDev, addRank } from "../../utils/common";
+import { mostVotedPunList, mostPunByDev, addRank } from "../../utils/common";
 import { BESTPUNTABLEHEAD, DEVBYPUNS } from "../../utils/enums";
 import "./Ranking.css";
 
 const Ranking = () => {
   const puns = JSON.parse(localStorage.getItem("puns"));
   const rankedPuns = addRank(mostPunByDev(puns));
-  const rankedDevs = addRank(MostVotedPunList(puns));
+  const rankedDevs = addRank(mostVotedPunList(puns));
 
   return (
     <>

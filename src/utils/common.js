@@ -1,4 +1,4 @@
-export const MostVotedPunList = (puns) => {
+export const mostVotedPunList = (puns) => {
   const sortedPuns = puns.sort((a, b) => b.votes - a.votes);
   return sortedPuns;
 };

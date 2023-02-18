@@ -4,7 +4,7 @@ import { BESTPUNTABLEHEAD } from "../../utils/enums";
 
 describe("<DevTable />", () => {
   const renderFilledSetup = () => {
-    const MostVotedPunList = [
+    const mostVotedPunList = [
       {
         id: "1",
         votes: 3,
@@ -33,12 +33,12 @@ describe("<DevTable />", () => {
     return render(
       <RankingTable
         tableHead={BESTPUNTABLEHEAD}
-        tableRowContent={MostVotedPunList}
+        tableRowContent={mostVotedPunList}
       />
     );
   };
   const renderFilledDrawSetup = () => {
-    const MostVotedPunList = [
+    const mostVotedPunList = [
       {
         id: "1",
         votes: 3,
@@ -67,7 +67,7 @@ describe("<DevTable />", () => {
     return render(
       <RankingTable
         tableHead={BESTPUNTABLEHEAD}
-        tableRowContent={MostVotedPunList}
+        tableRowContent={mostVotedPunList}
       />
     );
   };
