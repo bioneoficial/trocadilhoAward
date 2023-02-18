@@ -21,7 +21,7 @@ const RankingTable = ({ tableHead, tableRowContent }) => {
             </tr>
           </thead>
           <tbody>
-            {tableRowContent.map((row, index) => (
+            {tableRowContent.map((row) => (
               <tr className="ranking-table__row" key={row.id}>
                 <td
                   className={`ranking-table__cell ranking-table__cell--rank-${

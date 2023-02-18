@@ -8,6 +8,7 @@ describe("<DevTable />", () => {
       {
         id: "1",
         votes: 3,
+        rank: 1,
         dev: "dev1",
         context: "context1",
         message: "message1",
@@ -16,6 +17,7 @@ describe("<DevTable />", () => {
       {
         id: "2",
         votes: 2,
+        rank: 2,
         dev: "dev2",
         context: "context2",
         message: "message2",
@@ -24,6 +26,7 @@ describe("<DevTable />", () => {
       {
         id: "3",
         votes: 1,
+        rank: 3,
         dev: "dev3",
         context: "context3",
         message: "message3",
@@ -41,6 +44,7 @@ describe("<DevTable />", () => {
     const mostVotedPunList = [
       {
         id: "1",
+        rank: 1,
         votes: 3,
         dev: "dev1",
         context: "context1",
@@ -50,6 +54,7 @@ describe("<DevTable />", () => {
       {
         id: "2",
         votes: 3,
+        rank: 1,
         dev: "dev2",
         context: "context2",
         message: "message2",
@@ -58,6 +63,7 @@ describe("<DevTable />", () => {
       {
         id: "3",
         votes: 3,
+        rank: 1,
         dev: "dev3",
         context: "context3",
         message: "message3",
@@ -129,5 +135,29 @@ describe("<DevTable />", () => {
     });
 
     expect(emptyMessage).toBeInTheDocument();
+  });
+
+  it("should render the table with draw", () => {
+    renderFilledDrawSetup();
+
+    const table = screen.getByRole("table");
+    const rows = within(table).getAllByRole("row");
+
+    expect(rows.length).toBe(4);
+    expect(rows[1]).toHaveTextContent(/1/i);
+    expect(rows[1]).toHaveTextContent(/3/i);
+    expect(rows[1]).toHaveTextContent(/dev1/i);
+    expect(rows[1]).toHaveTextContent(/context1/i);
+    expect(rows[1]).toHaveTextContent(/message1/i);
+    expect(rows[2]).toHaveTextContent(/1/i);
+    expect(rows[2]).toHaveTextContent(/3/i);
+    expect(rows[2]).toHaveTextContent(/dev2/i);
+    expect(rows[2]).toHaveTextContent(/context2/i);
+    expect(rows[2]).toHaveTextContent(/message2/i);
+    expect(rows[3]).toHaveTextContent(/1/i);
+    expect(rows[3]).toHaveTextContent(/3/i);
+    expect(rows[3]).toHaveTextContent(/dev3/i);
+    expect(rows[3]).toHaveTextContent(/context3/i);
+    expect(rows[3]).toHaveTextContent(/message3/i);
   });
 });
