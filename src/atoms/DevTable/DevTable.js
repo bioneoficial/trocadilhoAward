@@ -2,8 +2,8 @@ import "./DevTable.css";
 
 import React from "react";
 
-const DevTable = ({tableHead, tableRowContent}) => {
-  const pos = [ "gold", "silver", "bronze" ];
+const DevTable = ({ tableHead, tableRowContent }) => {
+  const pos = ["gold", "silver", "bronze"];
   return (
     <React.Fragment>
       {!tableRowContent || tableRowContent.length === 0 ? (
@@ -39,8 +39,8 @@ const DevTable = ({tableHead, tableRowContent}) => {
             ))}
           </tbody>
         </table>
-      )
-} < /React.Fragment>
+      )}{" "}
+    </React.Fragment>
   );
 };
 
