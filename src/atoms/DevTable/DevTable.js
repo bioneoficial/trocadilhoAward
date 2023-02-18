@@ -19,8 +19,8 @@ const DevTable = ({ tableHead, tableRowContent }) => {
             </tr>
           </thead>
           <tbody>
-            {tableRowContent.map((row, index) => (
-              <tr className="dev-table__row" key={index}>
+            {tableRowContent.map((row) => (
+              <tr className="dev-table__row" key={row.dev}>
                 <td
                   className={`dev-table__cell dev-table__cell--rank-${
                     pos[row.rank - 1]
