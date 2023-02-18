@@ -1,0 +1,38 @@
+.dev-table {
+  font-family: "Nunito", sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  text-transform: capitalize;
+}
+
+.dev-table__header {
+  font-weight: 700;
+}
+
+.dev-table__header,
+.dev-table__cell {
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.dev-table__cell--rank-gold {
+  background-color: gold;
+}
+
+.dev-table__cell--rank-silver {
+  background-color: silver;
+}
+
+.dev-table__cell--rank-bronze {
+  background-color: #cd7f32;
+}
+
+.dev-table__cell:not(.dev-table__cell--rank-gold):not(
+    .dev-table__cell--rank-silver
+  ):not(.dev-table__cell--rank-bronze):hover {
+  background-color: #ddd;
+  transition: all 0.2s ease-in-out;
+}

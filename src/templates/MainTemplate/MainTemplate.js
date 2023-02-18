@@ -1,9 +1,12 @@
 import React from "react";
-import Tabs from "../../atoms/Tabs";
+import Tabs from "../../atoms/Tabs/index";
 import "./MainTemplate.css";
 
 const MainTemplate = ({ children }) => {
-  if(!window.sessionStorage.getItem("selectedTabId") && !window.sessionStorage.getItem("selectedTabName")) {
+  if (
+    !window.sessionStorage.getItem("selectedTabId") &&
+    !window.sessionStorage.getItem("selectedTabName")
+  ) {
     window.sessionStorage.setItem("selectedTabId", "LISTA DE TROCADILHOS");
     window.sessionStorage.setItem("selectedTabName", "Lista de Trocadilhos");
   }

@@ -1,6 +1,6 @@
 import React from "react";
-import PunList from "../../organisms/PunList";
-import MainTemplate from "../../templates/MainTemplate";
+import PunList from "../../organisms/PunList/index";
+import MainTemplate from "../../templates/MainTemplate/index";
 
 const PunListPage = () => {
   return (

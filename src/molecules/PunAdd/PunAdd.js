@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import TextInput from "../../atoms/TextInput";
+import TextInput from "../../atoms/TextInput/index";
 import { ERRORMESSAGE as errorMessage } from "../../utils/enums";
 import { formatBrazilianDate, dateMask } from "../../utils/common";
 import "./PunAdd.css";
-import Button from "../../atoms/Button";
+import Button from "../../atoms/Button/index";
 
 const PunAdd = () => {
   const [date, setDate] = useState("");

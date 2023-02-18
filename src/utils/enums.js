@@ -56,4 +56,14 @@ const PUNS = [
 
 const ERRORMESSAGE = "Este campo é obrigatório";
 
-export { TABS, PUNS, ERRORMESSAGE };
+const BESTPUNTABLEHEAD = [
+  "colocação",
+  "votos",
+  "dev",
+  "contexto",
+  "trocadilho",
+];
+
+const DEVBYPUNS = ["colocação", "número de trocadilhos", "dev"];
+
+export { TABS, PUNS, ERRORMESSAGE, BESTPUNTABLEHEAD, DEVBYPUNS };

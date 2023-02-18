@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import Pun from "./Pun";
+import Pun from "./index";
 
 describe("<Pun />", () => {
   const puns = [

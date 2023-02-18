@@ -1,0 +1,58 @@
+.ranking-table {
+  font-family: "Nunito", sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  text-transform: capitalize;
+}
+
+.ranking-table__header {
+  font-weight: 700;
+}
+
+.ranking-table__header,
+.ranking-table__cell {
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.ranking-table__cell:first-child {
+  width: 4%;
+}
+
+.ranking-table__cell--votes {
+  width: 4%;
+}
+
+.ranking-table__cell--dev {
+  width: 8%;
+}
+
+.ranking-table__cell--context {
+  width: 42%;
+}
+
+.ranking-table__cell--message {
+  width: 42%;
+}
+
+.ranking-table__cell--rank-gold {
+  background-color: gold;
+}
+
+.ranking-table__cell--rank-silver {
+  background-color: silver;
+}
+
+.ranking-table__cell--rank-bronze {
+  background-color: #cd7f32;
+}
+
+.ranking-table__cell:not(.ranking-table__cell--rank-gold):not(
+    .ranking-table__cell--rank-silver
+  ):not(.ranking-table__cell--rank-bronze):hover {
+  background-color: #ddd;
+  transition: all 0.2s ease-in-out;
+}

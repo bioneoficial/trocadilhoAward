@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Button from "../../atoms/Button";
+import Button from "../../atoms/Button/index";
 import "./Pun.css";
 
 const Pun = ({ puns }) => {

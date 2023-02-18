@@ -1,11 +1,11 @@
 import React from "react";
-import Pun from "../../atoms/Pun";
+import Pun from "../../atoms/Pun/index";
 import "./PunList.css";
-import { PUNS } from "../../utils/enums";
+// import { PUNS } from "../../utils/enums";
 
 const PunList = () => {
   if (!localStorage.getItem("puns")) {
-    localStorage.setItem("puns", JSON.stringify(PUNS));
+    localStorage.setItem("puns", JSON.stringify([]));
   }
   const punsFromStorage = JSON.parse(localStorage.getItem("puns"));
   return (

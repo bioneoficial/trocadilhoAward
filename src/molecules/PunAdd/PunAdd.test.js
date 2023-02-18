@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import PunAdd from "./PunAdd";
+import PunAdd from "./index";
 
 describe("PunAdd", () => {
   it("renders the form fields", () => {
